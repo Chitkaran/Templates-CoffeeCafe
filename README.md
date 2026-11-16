@@ -45,7 +45,7 @@ Because `render.yaml` is included at the repository root, you can deploy automat
   1. In Render Dashboard, click **New + → Static Site**.
   2. Connect your GitHub repository.
   3. Set:
-     - **Build Command:** `npm install && npm run build`
+     - **Build Command:** `npm run build` (or `npm install && npm run build`)
      - **Publish Directory:** `dist`
   4. Under **Redirects / Rewrites**, add:
      - Source: `/*` → Destination: `/index.html` → Action: `Rewrite`
