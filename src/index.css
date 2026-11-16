@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-freeman: "Freeman", sans-serif;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #120e0c;
+    color: #f5efe6;
+    font-family: var(--font-sans);
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-freeman {
+  font-family: var(--font-freeman);
+}
+
+@keyframes steam-drift-a {
+  0% {
+    transform: translate3d(0, 8px, 0) scaleX(0.85) scaleY(0.85);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.55;
+  }
+  70% {
+    transform: translate3d(-10px, -46px, 0) scaleX(1.18) scaleY(1.15);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translate3d(6px, -84px, 0) scaleX(1.4) scaleY(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-drift-b {
+  0% {
+    transform: translate3d(0, 6px, 0) scaleX(0.8) scaleY(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.48;
+  }
+  75% {
+    transform: translate3d(12px, -52px, 0) scaleX(1.22) scaleY(1.2);
+    opacity: 0.24;
+  }
+  100% {
+    transform: translate3d(-8px, -96px, 0) scaleX(1.45) scaleY(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes coffee-swirl {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes plate-turntable {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bakery-sunbeam {
+  0%,
+  100% {
+    opacity: 0.24;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.42;
+    transform: translate3d(14px, 6px, 0) scale(1.04);
+  }
+}
+
+.animate-steam-a {
+  animation: steam-drift-a 4.4s ease-out infinite;
+}
+
+.animate-steam-b {
+  animation: steam-drift-b 5.2s ease-out 1.4s infinite;
+}
+
+.animate-steam-c {
+  animation: steam-drift-a 4.9s ease-out 2.7s infinite;
+}
+
+.animate-coffee-swirl {
+  animation: coffee-swirl 22s linear infinite;
+}
+
+.animate-plate-turntable {
+  animation: plate-turntable 16s linear infinite;
+}
+
+.animate-bakery-sunbeam {
+  animation: bakery-sunbeam 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-steam-a,
+  .animate-steam-b,
+  .animate-steam-c,
+  .animate-coffee-swirl,
+  .animate-plate-turntable,
+  .animate-bakery-sunbeam {
+    animation: none !important;
+  }
+}

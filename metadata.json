@@ -1,0 +1,6 @@
+{
+  "name": "Maison Sorrel — Café & Artisanal Deli",
+  "description": "An immersive, scroll-driven landing experience for Maison Sorrel, featuring morning espresso, flaky chocolate croissants, and an interactive circular deli showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "TextLayersConfig": {
+      "title": "TextLayersConfig",
+      "description": "Published editable text layers configuration for the landing page.",
+      "type": "object",
+      "properties": {
+        "layers": {
+          "type": "array",
+          "description": "Ordered list of editable text layer definitions (1 to 20 layers)."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the last save."
+        },
+        "updatedBy": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "UID of the authenticated owner who published the text layers."
+        }
+      },
+      "required": ["layers", "updatedAt", "updatedBy"]
+    }
+  },
+  "firestore": {
+    "/siteConfig/{configId}": {
+      "schema": {
+        "$ref": "#/entities/TextLayersConfig"
+      },
+      "description": "Publicly readable site typography and text layer configuration."
+    }
+  }
+}
